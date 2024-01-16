@@ -1,0 +1,13 @@
+import sqlite3
+connection = sqlite3.connect('my_databse.db')
+cursor = connection.cursor()
+cursor.execute('SELECT * FROM Users')
+first_user = cursor.fetchone()
+print(first_user)
+cursor.execute('SELECT * FROM Users')
+first_five_user = cursor.fetchone()
+print(first_five_user)
+cursor.execute('SELECT * FROM Users')
+all_user = cursor.fetchone()
+print(all_user)
+connection.close()
